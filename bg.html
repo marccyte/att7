@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Background</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-wrapper {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300vh; /* 100vh * 16/9 */
+      height: 300vh;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: rgba(14, 173, 134, 0.514);
+      text-align: center;
+      font-size: 2rem;
+      padding-top: 20vh;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/0imeLBVFsk0?autoplay=1&mute=1&controls=0&loop=1&playlist=0imeLBVFsk0&modestbranding=1&showinfo=0&rel=0"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen>
+  </iframe>
+  <!-- This is the opacity overlay -->
+  <div class="overlay"></div>
+</div>
+
+</body>
+</html>
